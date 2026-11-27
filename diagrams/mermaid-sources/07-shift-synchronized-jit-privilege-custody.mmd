@@ -1,0 +1,14 @@
+%% Title: Shift-Synchronized JIT Privilege Custody (Sleep-Hour Zero-Standing-Privilege)
+%% Scope: Binds cloud IAM write permissions strictly to the active daylight pod's 8.5-hour window—eliminating overnight credential hijack risk and accidental off-shift mutations.
+%% Style: Pure Monochrome Plain-White Architectural Blueprint
+%% Author: Favour Ikeoluwa Adamson (Chief Enterprise Architect)
+flowchart TB
+    classDef whiteBox fill:#ffffff,stroke:#111827,stroke-width:2px,color:#000000
+
+    CLOCK["UTC Master Shift Clock (Current: 08:15 UTC -> EMEA Window)"]:::whiteBox
+
+    EMEA_ROLE["EMEA Pod IAM / PIM / PAM Role<br/>Status: ACTIVE WRITE CUSTODY (05:00 - 13:30 UTC)"]:::whiteBox
+    AMER_ROLE["AMER Pod IAM / PIM / PAM Role<br/>Status: READ-ONLY OBSERVABILITY (Sleeping — Write Locked)"]:::whiteBox
+    APAC_ROLE["APAC Pod IAM / PIM / PAM Role<br/>Status: READ-ONLY OBSERVABILITY (Off-Shift — Write Locked)"]:::whiteBox
+
+    CLOCK --> EMEA_ROLE & AMER_ROLE & APAC_ROLE

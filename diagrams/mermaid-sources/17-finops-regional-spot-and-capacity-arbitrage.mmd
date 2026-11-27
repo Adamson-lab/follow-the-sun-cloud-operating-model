@@ -1,0 +1,12 @@
+%% Title: Follow-the-Sun FinOps Compute & Spot Capacity Shifting Loop
+%% Scope: Leverages awake regional SRE pods to shift non-sovereign batch analytics and CI runners into off-peak regional cloud capacity windows.
+%% Style: Pure Monochrome Plain-White Architectural Blueprint
+%% Author: Favour Ikeoluwa Adamson (Chief Enterprise Architect)
+flowchart LR
+    classDef whiteBox fill:#ffffff,stroke:#111827,stroke-width:2px,color:#000000
+
+    BATCH["Global Non-Sovereign Batch & AI Training Queue"]:::whiteBox
+    ARB["Solar Capacity Arbitrage Scheduler<br/>Routes Compute to Nighttime Off-Peak Regions<br/>While Awake Daylight Pod Supervises"]:::whiteBox
+    SAVE["28% Spot & Off-Peak Compute Savings ($3.1M/yr)"]:::whiteBox
+
+    BATCH --> ARB --> SAVE

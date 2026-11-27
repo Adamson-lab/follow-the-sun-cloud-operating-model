@@ -1,0 +1,13 @@
+%% Title: Global CI/CD Release Train & Maintenance Window Synchronization
+%% Scope: Schedules progressive production deployments strictly during each region's peak daylight engineering hours—never shipping high-risk changes into an unstaffed night window.
+%% Style: Pure Monochrome Plain-White Architectural Blueprint
+%% Author: Favour Ikeoluwa Adamson (Chief Enterprise Architect)
+flowchart LR
+    classDef whiteBox fill:#ffffff,stroke:#111827,stroke-width:2px,color:#000000
+
+    REL["Global Production Release v4.18.0"]:::whiteBox
+    W1["Wave 1: APAC Prod Clusters<br/>Executed 01:00 UTC (09:00 SGT — APAC Peak)"]:::whiteBox
+    W2["Wave 2: EMEA Prod Clusters<br/>Executed 08:00 UTC (09:00 CET — EMEA Peak)"]:::whiteBox
+    W3["Wave 3: AMER Prod Clusters<br/>Executed 14:30 UTC (09:30 EST — AMER Peak)"]:::whiteBox
+
+    REL --> W1 --> W2 --> W3

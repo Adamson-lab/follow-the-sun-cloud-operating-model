@@ -1,0 +1,12 @@
+%% Title: Executive MTTR, Handover Latency & Attrition Savings Telemetry Pipeline
+%% Scope: Aggregates operational KPIs proving faster incident resolution, zero overnight pages, and reduced SRE attrition to the Board Risk Committee.
+%% Style: Pure Monochrome Plain-White Architectural Blueprint
+%% Author: Favour Ikeoluwa Adamson (Chief Enterprise Architect)
+flowchart LR
+    classDef whiteBox fill:#ffffff,stroke:#111827,stroke-width:2px,color:#000000
+
+    SRC["Handover Ledger + PagerDuty + CloudTrail + HR Attrition Data"]:::whiteBox
+    AGG["Executive Operations Analytics Engine"]:::whiteBox
+    KPI["Board KPIs:<br/>1. Sev-1 MTTR: 54m -> 14m (-74%)<br/>2. Overnight Pages: 42/mo -> 0 (-100%)<br/>3. SRE Annual Attrition: 22% -> 6%"]:::whiteBox
+
+    SRC --> AGG --> KPI

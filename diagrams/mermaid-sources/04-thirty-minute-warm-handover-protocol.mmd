@@ -1,0 +1,18 @@
+%% Title: 30-Minute Cryptographic Warm-Handover Protocol (Zero Dropped Sev-1 Context)
+%% Scope: Details the deterministic T-30m to T+0m handover sequence ensuring incoming engineers assume live incident command with complete telemetry and verified JIT credentials.
+%% Style: Pure Monochrome Plain-White Architectural Blueprint
+%% Author: Favour Ikeoluwa Adamson (Chief Enterprise Architect)
+sequenceDiagram
+    autonumber
+    participant OutPod as Outgoing Pod (AMER Shift Lead)
+    participant Engine as Handover State Compiler & JIT Broker
+    participant InPod as Incoming Pod (APAC Shift Lead)
+    participant Cloud as AWS / Azure / GCP Control Plane
+
+    Note over OutPod,InPod: T-30m: 30-Minute Live Overlap Window Begins
+    Engine->>Engine: Snapshot Open Sev-1/2 Incidents, Active Alerts & Pending Changes
+    Engine->>InPod: Deliver Structured Handover Manifest + Live War-Room Briefing
+    InPod->>Engine: Sign Cryptographic Acknowledgment (WebAuthn / FIDO2)
+    Engine->>Cloud: Activate 8.5-Hour Daylight JIT Admin Custody for APAC Pod
+    Note over OutPod,InPod: T+0m: Shift Cutover Complete
+    Engine->>Cloud: Revoke AMER Pod Write Custody (Sleep Protection Enforced)

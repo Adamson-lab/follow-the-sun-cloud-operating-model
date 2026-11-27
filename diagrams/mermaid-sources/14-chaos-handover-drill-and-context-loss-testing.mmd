@@ -1,0 +1,12 @@
+%% Title: Automated Chaos Handover Drill & Context-Retention Verification Suite
+%% Scope: Injects synthetic Sev-1 incidents 15 minutes before shift boundaries (`20:15 UTC`, `04:15 UTC`, `12:15 UTC`) to verify zero context loss across pod transitions.
+%% Style: Pure Monochrome Plain-White Architectural Blueprint
+%% Author: Favour Ikeoluwa Adamson (Chief Enterprise Architect)
+flowchart TB
+    classDef whiteBox fill:#ffffff,stroke:#111827,stroke-width:2px,color:#000000
+
+    INJ["Chaos Injector (T-15m Before Shift Cutover)<br/>Simulates Synthetic Payment Latency Spike"]:::whiteBox
+    HAND["30-Minute Warm Handover Execution<br/>Outgoing Pod Packages State -> Incoming Pod Accepts"]:::whiteBox
+    SCORE["Context-Retention & MTTR Scorer<br/>Verifies 0 Duplicate Diagnostic Commands & MTTR < 15m"]:::whiteBox
+
+    INJ --> HAND --> SCORE

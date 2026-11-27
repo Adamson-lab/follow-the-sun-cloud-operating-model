@@ -1,0 +1,15 @@
+%% Title: Automated Incident Context-Graph & Runbook State Compiler
+%% Scope: Eliminates tribal-knowledge loss at shift boundaries by automatically assembling metrics, recent deployments, blast radius, and executed runbook steps into a machine-verified manifest.
+%% Style: Pure Monochrome Plain-White Architectural Blueprint
+%% Author: Favour Ikeoluwa Adamson (Chief Enterprise Architect)
+flowchart LR
+    classDef whiteBox fill:#ffffff,stroke:#111827,stroke-width:2px,color:#000000
+
+    PD["PagerDuty / Incident.io Timeline"]:::whiteBox
+    GIT["Recent Git Commits & Terraform Applies"]:::whiteBox
+    OBS["Prometheus / Datadog Error Spikes"]:::whiteBox
+    RB["Executed Runbook Steps & Rollback State"]:::whiteBox
+
+    MANIFEST["Canonical JSON/Markdown Handover Manifest<br/>1. Root-Cause Hypothesis & Confidence Score<br/>2. Exact Commands Already Run (No Duplicates)<br/>3. Next Recommended Action & Blast Radius"]:::whiteBox
+
+    PD & GIT & OBS & RB --> MANIFEST

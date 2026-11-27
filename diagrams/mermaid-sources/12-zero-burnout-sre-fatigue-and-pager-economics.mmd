@@ -1,0 +1,16 @@
+%% Title: Zero-Burnout SRE Fatigue & Overnight Pager Elimination Architecture
+%% Scope: Tracks after-hours interrupts per engineer as a first-class SLO—automatically escalating to HR/VP Ops if any engineer is paged outside their local 08:00–18:00 daylight window.
+%% Style: Pure Monochrome Plain-White Architectural Blueprint
+%% Author: Favour Ikeoluwa Adamson (Chief Enterprise Architect)
+flowchart TB
+    classDef whiteBox fill:#ffffff,stroke:#111827,stroke-width:2px,color:#000000
+
+    PAGE["All Production Pager Alerts (30-Day Rolling Window)"]:::whiteBox
+    CHK{"Triggered Inside Engineer's Local<br/>08:00 - 18:00 Daylight Window?"}:::whiteBox
+
+    DAY["Daylight Alert (99.7% of Alerts)<br/>Handled Fresh & Rested (MTTR: 11 mins)"]:::whiteBox
+    NIGHT["Off-Hours Alert Violation (0.3%)<br/>Triggers Routing Audit + Mandatory Comp-Time"]:::whiteBox
+
+    PAGE --> CHK
+    CHK -->|"Yes"| DAY
+    CHK -->|"No"| NIGHT

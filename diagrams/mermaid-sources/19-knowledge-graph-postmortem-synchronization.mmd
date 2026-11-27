@@ -1,0 +1,12 @@
+%% Title: Cross-Pod Knowledge Graph & Asynchronous Postmortem Synchronization
+%% Scope: Ensures lessons learned from an incident resolved in Singapore automatically update Terraform runbooks and alert thresholds in Frankfurt and New York before their shifts begin.
+%% Style: Pure Monochrome Plain-White Architectural Blueprint
+%% Author: Favour Ikeoluwa Adamson (Chief Enterprise Architect)
+flowchart TB
+    classDef whiteBox fill:#ffffff,stroke:#111827,stroke-width:2px,color:#000000
+
+    POST["APAC Postmortem & Runbook Patch (03:30 UTC)"]:::whiteBox
+    KG["Global Operations Knowledge Graph & GitOps Repo"]:::whiteBox
+    SYNC["Pre-Shift Digest Delivered to EMEA (05:00 UTC) & AMER (13:00 UTC)"]:::whiteBox
+
+    POST --> KG --> SYNC

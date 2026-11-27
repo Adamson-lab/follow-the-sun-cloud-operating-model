@@ -1,0 +1,13 @@
+command_pods:
+  - id: AMER-NEW-YORK
+    utc_window: "13:00-21:00"
+    overlap_handover_utc: "20:30-21:00"
+    clouds: [aws-us-east-1, azure-eastus2, gcp-us-east4]
+  - id: APAC-SINGAPORE
+    utc_window: "21:00-05:00"
+    overlap_handover_utc: "04:30-05:00"
+    clouds: [aws-ap-southeast-1, azure-southeastasia, gcp-asia-southeast1]
+  - id: EMEA-FRANKFURT
+    utc_window: "05:00-13:00"
+    overlap_handover_utc: "12:30-13:00"
+    clouds: [aws-eu-central-1, azure-germanywestcentral, gcp-europe-west3]

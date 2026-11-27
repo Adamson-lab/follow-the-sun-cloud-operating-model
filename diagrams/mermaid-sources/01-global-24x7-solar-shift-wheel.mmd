@@ -1,0 +1,14 @@
+%% Title: Global 24x7 Follow-the-Sun Command Wheel (AMER -> APAC -> EMEA -> AMER)
+%% Scope: Eliminates overnight on-call pager fatigue across Fortune 500 operations by routing active incident command, change approvals, and SRE authority strictly to awake daylight engineering pods.
+%% Style: Pure Monochrome Plain-White Architectural Blueprint
+%% Author: Favour Ikeoluwa Adamson (Chief Enterprise Architect)
+flowchart LR
+    classDef whiteBox fill:#ffffff,stroke:#111827,stroke-width:2.5px,color:#000000
+
+    AMER["POD 1: AMER COMMAND (New York / Virginia)<br/>Active Window: 13:00 - 21:00 UTC (08:00 - 16:00 EST)<br/>35 SREs | Full Write & Release Authority"]:::whiteBox
+    APAC["POD 2: APAC COMMAND (Singapore / Sydney)<br/>Active Window: 21:00 - 05:00 UTC (05:00 - 13:00 SGT)<br/>32 SREs | Full Write & Release Authority"]:::whiteBox
+    EMEA["POD 3: EMEA COMMAND (Frankfurt / London)<br/>Active Window: 05:00 - 13:00 UTC (06:00 - 14:00 CET)<br/>34 SREs | Full Write & Release Authority"]:::whiteBox
+
+    AMER -->|"20:30 UTC Cryptographic<br/>Warm Handover (30m Overlap)"| APAC
+    APAC -->|"04:30 UTC Cryptographic<br/>Warm Handover (30m Overlap)"| EMEA
+    EMEA -->|"12:30 UTC Cryptographic<br/>Warm Handover (30m Overlap)"| AMER

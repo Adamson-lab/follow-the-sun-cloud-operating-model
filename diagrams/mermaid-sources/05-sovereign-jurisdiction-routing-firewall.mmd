@@ -1,0 +1,17 @@
+%% Title: Sovereign & Regulatory Jurisdiction Routing Firewall (FedRAMP / EU GDPR / MAS TRM)
+%% Scope: Prevents an APAC or EMEA engineer from accidentally accessing US FedRAMP/ITAR workloads—automatically routing sovereign incidents to cleared US-based follow-the-sun sub-pods.
+%% Style: Pure Monochrome Plain-White Architectural Blueprint
+%% Author: Favour Ikeoluwa Adamson (Chief Enterprise Architect)
+flowchart TB
+    classDef whiteBox fill:#ffffff,stroke:#111827,stroke-width:2px,color:#000000
+
+    INC["Incoming Alert / Change Request<br/>Workload Tag: Enclave=FedRAMP-High-US | Time: 02:30 UTC"]:::whiteBox
+    SOLAR["Solar Router Default Candidate:<br/>APAC Pod (Singapore — Awake Daylight)"]:::whiteBox
+    FENCE{"Sovereign Jurisdiction Gate:<br/>Requires US_CITIZEN + CONUS_LOCATION?"}:::whiteBox
+
+    PASS["Commercial Workload:<br/>Route to APAC Singapore Pod (Standard FTS)"]:::whiteBox
+    SOV["Sovereign Workload:<br/>BLOCK Foreign Pod + Route to US West/East<br/>Cleared Sovereign Follow-the-Sun Sub-Pod"]:::whiteBox
+
+    INC --> SOLAR --> FENCE
+    FENCE -->|"Commercial / Global"| PASS
+    FENCE -->|"FedRAMP / ITAR / Sovereign"| SOV

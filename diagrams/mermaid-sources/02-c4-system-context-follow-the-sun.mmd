@@ -1,0 +1,22 @@
+%% Title: C4 Level 1: System Context — Follow-the-Sun Cloud Operating Control Plane
+%% Scope: Connects regional SRE command pods, sovereign compliance fences, multi-cloud infrastructure planes, and immutable handover ledgers.
+%% Style: Pure Monochrome Plain-White Architectural Blueprint
+%% Author: Favour Ikeoluwa Adamson (Chief Enterprise Architect)
+flowchart TB
+    classDef whiteBox fill:#ffffff,stroke:#111827,stroke-width:2px,color:#000000
+    classDef coreBox fill:#ffffff,stroke:#000000,stroke-width:3.5px,color:#000000
+
+    VP["VP Global Cloud Operations & CISO<br/>(Govern 24x7 SLAs, Fatigue & Sovereignty)"]:::whiteBox
+    PODS["Regional Daylight SRE Command Pods<br/>(AMER New York | APAC Singapore | EMEA Frankfurt)"]:::whiteBox
+    REG["EU DORA, FedRAMP & MAS TRM Auditors<br/>(Verify Continuity & Jurisdiction Routing)"]:::whiteBox
+
+    FTS["Follow-the-Sun Cloud Operating Control Plane<br/>Solar Router + State Compiler + Sovereign Fence<br/>[Go + Python + OPA + Multi-Cloud STS/PIM/PAM]"]:::coreBox
+
+    CLOUDS["Multi-Cloud Infrastructure Estate<br/>(AWS Orgs + Azure Tenant + GCP Resource Hierarchy)"]:::whiteBox
+    ITSM["PagerDuty / ServiceNow / Slack War-Rooms<br/>(Automated Shift Routing & State Sync)"]:::whiteBox
+
+    VP -->|"1. Define Shift Windows & Jurisdiction Rules"| FTS
+    PODS <-->|"2. Execute Daylight Ops & Cryptographic Handover"| FTS
+    FTS <-->|"3. Mint Time-Bound Regional JIT Credentials"| CLOUDS
+    FTS <-->|"4. Re-Route Pagers & Compile Incident State"| ITSM
+    REG -->|"5. Audit Merkle Handover Receipts"| FTS

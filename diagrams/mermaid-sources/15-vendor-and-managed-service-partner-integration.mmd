@@ -1,0 +1,12 @@
+%% Title: Third-Party Vendor & Global Tier-1 MSP Follow-the-Sun Escalation Bridge
+%% Scope: Integrates hyperscaler TAMs (AWS Enterprise Support, Azure Unified, GCP Premium) and global MSP pods into the same UTC shift routing schedule.
+%% Style: Pure Monochrome Plain-White Architectural Blueprint
+%% Author: Favour Ikeoluwa Adamson (Chief Enterprise Architect)
+flowchart LR
+    classDef whiteBox fill:#ffffff,stroke:#111827,stroke-width:2px,color:#000000
+
+    POD["Active Regional Enterprise Pod"]:::whiteBox
+    BRIDGE["Vendor Support Shift Bridge<br/>Routes Sev-1 Vendor Tickets to Same-Timezone TAMs"]:::whiteBox
+    TAM["Hyperscaler Support Hubs<br/>(Seattle/Dublin/Sydney AWS, Azure & GCP TAMs)"]:::whiteBox
+
+    POD --> BRIDGE --> TAM

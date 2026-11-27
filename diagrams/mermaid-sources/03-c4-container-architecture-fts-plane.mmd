@@ -1,0 +1,19 @@
+%% Title: C4 Level 2: Container Architecture — Solar Shift Router, State Compiler & Sovereign Fence
+%% Scope: Illustrates internal containerized services managing UTC shift transitions, incident state serialization, jurisdiction gating, and JIT privilege rotation.
+%% Style: Pure Monochrome Plain-White Architectural Blueprint
+%% Author: Favour Ikeoluwa Adamson (Chief Enterprise Architect)
+flowchart LR
+    classDef whiteBox fill:#ffffff,stroke:#111827,stroke-width:2px,color:#000000
+
+    ROUTER["Solar UTC Shift & Pager Router<br/>(Computes Active Daylight Pod + Overlap)"]:::whiteBox
+    FENCE["Sovereign Jurisdiction Policy Fence<br/>(Enforces FedRAMP US-Only & EU GDPR Rules)"]:::whiteBox
+    COMP["Automated Handover State Compiler<br/>(Packages Open Sev-1s, PRs & Telemetry)"]:::whiteBox
+    JIT["Shift-Bound JIT Custody Broker<br/>(Grants Write Access Only to Active Pod)"]:::whiteBox
+    TELEM["MTTR & Engineer Fatigue Telemetry<br/>(Tracks Sleep-Hour Pages = 0)"]:::whiteBox
+    LEDGER[("Merkle Handover Attestation Ledger<br/>(Tri-Cloud Immutable Audit Trail)")]:::whiteBox
+
+    ROUTER -->|"Candidate Target Pod"| FENCE
+    FENCE -->|"Jurisdiction Approved"| COMP
+    COMP -->|"Signed Handover Manifest"| JIT
+    JIT -->|"Shift Metrics"| TELEM
+    COMP & JIT -->|"Seal Cryptographic Receipt"| LEDGER

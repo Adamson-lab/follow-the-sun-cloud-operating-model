@@ -1,0 +1,14 @@
+%% Title: 1:1 Multi-Cloud Regional Operations Pod Parity (AWS, Azure & GCP)
+%% Scope: Standardizes regional SRE command plane infrastructure, private bastion connectivity, and session recording identically across AWS, Azure, and GCP.
+%% Style: Pure Monochrome Plain-White Architectural Blueprint
+%% Author: Favour Ikeoluwa Adamson (Chief Enterprise Architect)
+flowchart TB
+    classDef whiteBox fill:#ffffff,stroke:#111827,stroke-width:2.5px,color:#000000
+
+    STD["Canonical Regional Command Pod Blueprint<br/>Zero-Trust Bastion + Session Recording + Shift JIT"]:::whiteBox
+
+    AWS_POD["AWS Regional Ops Pod<br/>AWS IAM Identity Center + SSM Session Manager<br/>+ EventBridge Shift Scheduler"]:::whiteBox
+    AZ_POD["Azure Regional Ops Pod<br/>Entra PIM Time-Bound Roles + Azure Bastion<br/>+ Logic Apps Handover Trigger"]:::whiteBox
+    GCP_POD["GCP Regional Ops Pod<br/>GCP Privileged Access Manager + IAP Tunnel<br/>+ Cloud Scheduler Shift Switch"]:::whiteBox
+
+    STD --> AWS_POD & AZ_POD & GCP_POD

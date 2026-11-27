@@ -1,0 +1,15 @@
+%% Title: EU DORA & MAS TRM Tamper-Evident Merkle Shift-Handover Ledger
+%% Scope: Cryptographically seals every shift handover manifest, incoming lead FIDO2 sign-off, and JIT custody rotation into tri-cloud WORM storage.
+%% Style: Pure Monochrome Plain-White Architectural Blueprint
+%% Author: Favour Ikeoluwa Adamson (Chief Enterprise Architect)
+flowchart LR
+    classDef whiteBox fill:#ffffff,stroke:#111827,stroke-width:2px,color:#000000
+
+    L1["Leaf 1: Handover Incident State Digest"]:::whiteBox
+    L2["Leaf 2: Incoming Lead FIDO2 Signature"]:::whiteBox
+    L3["Leaf 3: Sovereign Jurisdiction Gate Proof"]:::whiteBox
+
+    ROOT["SHA-256 Shift Handover Merkle Root"]:::whiteBox
+    WORM["Tri-Cloud WORM Compliance Storage"]:::whiteBox
+
+    L1 & L2 & L3 --> ROOT --> WORM

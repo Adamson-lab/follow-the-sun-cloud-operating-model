@@ -1,0 +1,5 @@
+Control_ID,Framework,Requirement,FTS_Technical_Control,Verified_Evidence
+DORA-ART-11,EU DORA,ICT Business Continuity & Operational Handover Resilience,30m Warm Handover Compiler + 94s Adjacent-Pod Failover,Merkle Handover Receipt
+FEDRAMP-AC-21,FedRAMP High,Information Sharing & US-Person Jurisdiction Routing,Sovereign Jurisdiction Routing Fence (CONUS-Only Sub-Pod),Sovereignty Block Log
+GDPR-ART-44,EU GDPR / Schrems II,Cross-Border Personal Data Transfer Protection,Frankfurt Edge PII Tokenization Before Global Handover,Edge Scrubber Audit Log
+MAS-TRM-9,MAS TRM Singapore,Privileged Access & Shift Change Governance,8.5h Daylight-Bound JIT Custody + FIDO2 Shift Sign-Off,JIT Custody Ledger

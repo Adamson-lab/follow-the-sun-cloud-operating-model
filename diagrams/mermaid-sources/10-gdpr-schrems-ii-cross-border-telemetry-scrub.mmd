@@ -1,0 +1,12 @@
+%% Title: GDPR & Schrems II Cross-Border Incident Telemetry Redaction Pipeline
+%% Scope: Ensures EU customer PII inside stack traces or logs is redacted at the Frankfurt edge before incident tickets are handed over to Singapore or New York SRE pods.
+%% Style: Pure Monochrome Plain-White Architectural Blueprint
+%% Author: Favour Ikeoluwa Adamson (Chief Enterprise Architect)
+flowchart LR
+    classDef whiteBox fill:#ffffff,stroke:#111827,stroke-width:2px,color:#000000
+
+    EU_LOG["Raw EU Production Incident Logs<br/>(Contains Customer IBANs, Emails & IPs)"]:::whiteBox
+    EDGE["Frankfurt (eu-central-1) Sovereign Edge Redactor<br/>Strips EU Personal Data -> Replaces with Token IDs"]:::whiteBox
+    GLOBAL["Sanitized Global Incident Ticket<br/>Safe for APAC & AMER Debugging Without GDPR Transfer"]:::whiteBox
+
+    EU_LOG --> EDGE --> GLOBAL
